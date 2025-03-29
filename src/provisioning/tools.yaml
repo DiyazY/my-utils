@@ -21,3 +21,17 @@
   install: brew install --cask dotnet-sdk
 
 # Ollama and goose are better to install from the website
+
+- name: postgres
+  description: "PostgreSQL is a powerful, open source object-relational database system."
+  install: brew install postgresql
+  run: brew services start postgresql@14
+  stop: brew services stop postgresql@14
+
+- name: mongodb
+  description: "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need."
+  install: brew tap mongodb/brew; brew update; brew install mongodb-community@8.0
+  run: brew install mongodb-community@8.0
+  stop: brew install mongodb-community@8.0
+
+# download Rider from the website
