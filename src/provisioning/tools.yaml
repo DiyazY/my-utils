@@ -35,3 +35,14 @@
   stop: brew install mongodb-community@8.0
 
 # download Rider from the website
+# download XTool Creative Space from the website
+# download Cursor AI from the website
+# install for coding: ollama run deepseek-coder:33b
+# setup parameters for llama3.3 in ollama so that it can perform well.
+# from AppStore: Goodnotes, Amphetamine
+
+- name: DBeaver
+  description: "DBeaver is a free and open source database management tool."
+  install: brew install --cask dbeaver-community
+
+# Debugtron was downloaded from the GitHub release page
