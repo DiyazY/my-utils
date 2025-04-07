@@ -46,3 +46,7 @@
   install: brew install --cask dbeaver-community
 
 # Debugtron was downloaded from the GitHub release page
+
+- name: dbngin
+  description: "DBngin is a GUI for managing local databases."
+  install: brew install --cask dbngin
