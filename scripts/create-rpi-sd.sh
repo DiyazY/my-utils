@@ -46,14 +46,15 @@ PI_MODELS=(
     "Raspberry Pi 3 / 3B+"
     "Raspberry Pi 4 / 4 Model B"
     "Raspberry Pi 5"
-    "Raspberry Pi Zero (original — ARMv6)"
+    "Raspberry Pi Zero W / WH (ARMv6 + WiFi)"
+    "Raspberry Pi Zero (original, no WiFi — ARMv6)"
 )
-# arch: arm64 for all except Pi Zero
-PI_ARCH=("arm64" "arm64" "arm64" "armhf")
-# has_wifi: all modern Pis have wifi; Zero original does NOT (Zero W does)
-PI_WIFI=(1 1 1 0)
-# needs_gadget: Pi Zero can use USB OTG ethernet
-PI_GADGET=(0 0 0 1)
+# arch: arm64 for all except Pi Zero variants
+PI_ARCH=("arm64" "arm64" "arm64" "armhf" "armhf")
+# has_wifi: Zero W has wifi, original Zero does not
+PI_WIFI=(1 1 1 1 0)
+# needs_gadget: only the original Zero (no wifi, no ethernet) needs USB OTG
+PI_GADGET=(0 0 0 0 1)
 
 # ─── OS images ────────────────────────────────────────────────────────
 # Ubuntu Server arm64 for Pi 3/4/5
