@@ -1,0 +1,17 @@
+---
+- name: Install Software
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Install Homebrew
+      shell: |
+        if ! command -v brew &> /dev/null; then
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        fi
+      args:
+        executable: /bin/bash
+
+    - name: Install software
+      shell: "{{ item.install }}"
+      loop: "{{ lookup('file', '../tools.yaml') | from_yaml | default([]) }}"
+      when: item.install is defined and 'brew' in item.install and 'cask' not in item.install

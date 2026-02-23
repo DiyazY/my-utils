@@ -1,0 +1,52 @@
+---
+- name: git
+  install: brew install git
+  description: "Git is a free and open source distributed version control system."
+- name: visual-studio-code
+  install: brew install --cask visual-studio-code
+- name: iterm2
+  install: brew install --cask iterm2
+  description: "iTerm2 is a terminal emulator for macOS that does amazing things."
+- name: colima
+  description: "Colima is a container runtime with an emphasis on simplicity and maintainability."
+  install: brew install colima
+- name: pyenv
+  description: "pyenv is a simple Python version management tool."
+  install: brew install pyenv
+- name: nvm
+  description: "nvm is a version manager for Node.js, designed to be installed per-user, and invoked per-shell."
+  install: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh | bash
+- name: dotnet-sdk
+  description: ".NET is a free, cross-platform, open-source developer platform for building many different types of applications."
+  install: brew install --cask dotnet-sdk
+
+# Ollama and goose are better to install from the website
+
+- name: postgres
+  description: "PostgreSQL is a powerful, open source object-relational database system."
+  install: brew install postgresql
+  run: brew services start postgresql@14
+  stop: brew services stop postgresql@14
+
+- name: mongodb
+  description: "MongoDB is a document database with the scalability and flexibility that you want with the querying and indexing that you need."
+  install: brew tap mongodb/brew; brew update; brew install mongodb-community@8.0
+  run: brew install mongodb-community@8.0
+  stop: brew install mongodb-community@8.0
+
+# download Rider from the website
+# download XTool Creative Space from the website
+# download Cursor AI from the website
+# install for coding: ollama run deepseek-coder:33b
+# setup parameters for llama3.3 in ollama so that it can perform well.
+# from AppStore: Goodnotes, Amphetamine
+
+- name: DBeaver
+  description: "DBeaver is a free and open source database management tool."
+  install: brew install --cask dbeaver-community
+
+# Debugtron was downloaded from the GitHub release page
+
+- name: dbngin
+  description: "DBngin is a GUI for managing local databases."
+  install: brew install --cask dbngin
